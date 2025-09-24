@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+
+  .filter {
+    flex: 1;
+  }
+}
+
+.card-container {
+    padding: 1rem;
+}
+
+.table-list {
+    background-color: transparent;
+}
+
+.paginator-list {
+    background-color: transparent;
+}

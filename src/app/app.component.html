@@ -1,1 +1,7 @@
-<router-outlet/>
+<header class="app-toolbar">
+    <h1>Héroes</h1>
+</header>
+<div class="loading-bar" *ngIf="loading$ | async"></div>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>

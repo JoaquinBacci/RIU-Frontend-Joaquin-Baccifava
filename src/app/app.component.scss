@@ -1,0 +1,35 @@
+.app-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.app-toolbar h1 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.loading-bar {
+    height: 3px;
+    width: 100%;
+    background: repeating-linear-gradient(90deg, #999 0 20px, #ddd 20px 40px);
+    animation: slide 1s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 40px 0;
+    }
+}

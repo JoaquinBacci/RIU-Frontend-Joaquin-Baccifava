@@ -1,13 +1,17 @@
+import { Component, inject } from '@angular/core';
+import { LoadingService } from './shared/services/loading.service';
+import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'riu-frontend-joaquin-baccifava';
+  private readonly loading = inject(LoadingService);
+  loading$: Observable<boolean> = this.loading.loading$;
 }

@@ -1,0 +1,27 @@
+<h2>{{ id ? 'Editar héroe' : 'Nuevo héroe' }}</h2>
+<form [formGroup]="form" (ngSubmit)="save()" class="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" appUppercase />
+        <mat-error *ngIf="form.controls.name.hasError('required')">Requerido</mat-error>
+        <mat-error *ngIf="form.controls.name.hasError('minlength')">Mínimo 3 caracteres</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Poder</mat-label>
+        <input matInput formControlName="power" />
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" rows="4"></textarea>
+    </mat-form-field>
+
+
+    <div class="actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Guardar</button>
+        <button mat-button type="button" (click)="cancel()">Cancelar</button>
+    </div>
+</form>

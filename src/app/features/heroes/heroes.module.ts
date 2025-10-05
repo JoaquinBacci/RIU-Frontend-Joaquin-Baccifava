@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { UppercaseDirective } from '../../shared/directives/uppercase.directive';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
     MatIconModule,
     MatInputModule,
     MatCardModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatDialogModule
   ]
 })
 export class HeroesModule { }

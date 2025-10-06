@@ -21,7 +21,7 @@ export class HeroListComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly route = inject(ActivatedRoute);
   private readonly dialog = inject(MatDialog);
 
-  displayedColumns: string[] = ['id', 'name', 'power', 'actions'];
+  displayedColumns: string[] = ['name', 'power', 'actions'];
 
   data: Hero[] = [];
   filtered: Hero[] = [];

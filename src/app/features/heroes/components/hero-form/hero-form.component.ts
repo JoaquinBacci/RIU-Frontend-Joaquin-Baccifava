@@ -45,9 +45,17 @@ export class HeroFormComponent implements OnInit {
     } else {
       this.svc.create(value);
     }
-    this.router.navigate(['/heroes']);
+    this.router.navigate(['/heroes'], {
+      relativeTo: this.route,
+      queryParamsHandling: 'preserve'
+    });
   }
 
 
-  cancel() { this.router.navigate(['/heroes']); }
+  cancel() { 
+    this.router.navigate(['/heroes'], {
+      relativeTo: this.route,
+      queryParamsHandling: 'preserve'
+    });
+  }
 }

@@ -2,7 +2,7 @@
     <section class="header">
         <mat-form-field appearance="outline" class="filter">
             <mat-label>Filtrar por nombre</mat-label>
-            <input matInput #q (input)="term$.next(q.value)" placeholder="e.g. man" />
+            <input matInput #q [value]="initialQuery" (input)="term$.next(q.value)" placeholder="e.g. man" />
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="add()">Añadir</button>
     </section>
@@ -34,7 +34,11 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
     
-    
-    <mat-paginator class="paginator-list" [length]="filtered.length" [pageSize]="5" [pageSizeOptions]="[5,10,25]"
-        showFirstLastButtons></mat-paginator>
+    <mat-paginator class="paginator-list" 
+        [length]="filtered.length" 
+        [pageSize]="pageSize" 
+        [pageSizeOptions]="[5,10,25]"
+        showFirstLastButtons 
+        [pageIndex]="pageIndex">
+    </mat-paginator>
 </mat-card>
